@@ -40,44 +40,7 @@ static const GUID png =
 { 0x557cf406, 0x1a04, 0x11d3, { 0x9a, 0x73, 0x00, 0x00, 0xf8, 0x1e, 0xf3, 0x2e } };
 
 string generateString(int a){
-    string str = "";
-    switch(a / 100){
-        case(0):{str += '0';break;}
-        case(1):{str += '1';break;}
-        case(2):{str += '2';break;}
-        case(3):{str += '3';break;}
-        case(4):{str += '4';break;}
-        case(5):{str += '5';break;}
-        case(6):{str += '6';break;}
-        case(7):{str += '7';break;}
-        case(8):{str += '8';break;}
-        case(9):{str += '9';break;}
-    }
-    switch((a % 100)/10){
-        case(0):{str += '0';break;}
-        case(1):{str += '1';break;}
-        case(2):{str += '2';break;}
-        case(3):{str += '3';break;}
-        case(4):{str += '4';break;}
-        case(5):{str += '5';break;}
-        case(6):{str += '6';break;}
-        case(7):{str += '7';break;}
-        case(8):{str += '8';break;}
-        case(9):{str += '9';break;}
-    }
-    switch(a % 10){
-        case(0):{str += '0';break;}
-        case(1):{str += '1';break;}
-        case(2):{str += '2';break;}
-        case(3):{str += '3';break;}
-        case(4):{str += '4';break;}
-        case(5):{str += '5';break;}
-        case(6):{str += '6';break;}
-        case(7):{str += '7';break;}
-        case(8):{str += '8';break;}
-        case(9):{str += '9';break;}
-    }
-    return str;
+    return to_string(a);
 }
 
 
@@ -254,7 +217,7 @@ int main()
 
         // Create the main window
         RenderWindow window(VideoMode(1500,800), "LEGO figures", Style::Default, contextSettings);
-        window.setVerticalSyncEnabled(true);//управление кадрами
+        window.setVerticalSyncEnabled(true);//ГіГЇГ°Г ГўГ«ГҐГ­ГЁГҐ ГЄГ Г¤Г°Г Г¬ГЁ
         //sf::WindowHandle handle = window.getSystemHandle();
         //ImGui::SFML::Init(window);
 
@@ -561,8 +524,8 @@ int main()
         glEnable(GL_DEPTH_TEST);
         glDepthMask(GL_TRUE);
         glClearDepth(1.f);
-        glDisable(GL_LIGHTING);// отключение освещения
-        //glViewport(0, 0, window.getSize().x, window.getSize().y);//область на экране , где выводится изображение
+        glDisable(GL_LIGHTING);// Г®ГІГЄГ«ГѕГ·ГҐГ­ГЁГҐ Г®Г±ГўГҐГ№ГҐГ­ГЁГї
+        //glViewport(0, 0, window.getSize().x, window.getSize().y);//Г®ГЎГ«Г Г±ГІГј Г­Г  ГЅГЄГ°Г Г­ГҐ , ГЈГ¤ГҐ ГўГ»ГўГ®Г¤ГЁГІГ±Гї ГЁГ§Г®ГЎГ°Г Г¦ГҐГ­ГЁГҐ
         glViewport(0,0, window.getSize().x*0.7, window.getSize().y);
         glMatrixMode(GL_PROJECTION);// Setup a perspective projection
         glLoadIdentity();
@@ -1044,7 +1007,7 @@ int main()
                             }
                         case Keyboard::F1:
                             {
-                                system("notepad resources/справка.txt");
+                                system("notepad resources/Г±ГЇГ°Г ГўГЄГ .txt");
                                 break;
                             }
                     }
@@ -1109,7 +1072,7 @@ int main()
 /**
             ImGui::SFML::Update(window, clock.restart());
 
-            ImGui::Begin("Nastroiki:"); // создаём окно
+            ImGui::Begin("Nastroiki:"); // Г±Г®Г§Г¤Г ВёГ¬ Г®ГЄГ­Г®
             ImGui::NewFrame;
             if (ImGui::TreeNode("kolichestvo kubicov:"))
             {
@@ -1155,7 +1118,7 @@ int main()
             //angleY=rotateY/(PI*R);}
 
 
-            //--вращение камеры--//
+            //--ГўГ°Г Г№ГҐГ­ГЁГҐ ГЄГ Г¬ГҐГ°Г»--//
             //------
             if(marScreen) gluLookAt(0,0,0,0,0,0,0.0,1.0,0.0);
             else gluLookAt(sin(angleX)*sin(angleY)*R,cos(angleX)*R,sin(angleX)*cos(angleY)*R,0,0,0,0.0,1.0,0.0);
